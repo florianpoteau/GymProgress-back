@@ -1,5 +1,5 @@
 services:
-  db:
+  gymprogress:
     image: postgres:16.2
     container_name: postgres-db
     restart: always
