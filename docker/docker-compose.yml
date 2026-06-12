@@ -1,7 +1,21 @@
 services:
-  gymprogress:
+  back:
+    image: gymprogress:latest
+    container_name: gymprogress-backend-container
+    restart: always
+    environment:
+      - SPRING_DATASOURCE_URL=${SPRING_DATASOURCE_URL}
+      - SPRING_DATASOURCE_USERNAME=${SPRING_DATASOURCE_USER}
+      - SPRING_DATASOURCE_PASSWORD=${SPRING_DATASOURCE_PASSWORD}
+    ports:
+      - "8080:8080"
+    depends_on:
+      gymprogressdb:
+        condition: service_healthy
+
+  gymprogressdb:
     image: postgres:16.2
-    container_name: postgres-db
+    container_name: gymprogress-db
     restart: always
     environment:
       - POSTGRES_USER=${POSTGRES_USER}
@@ -11,5 +25,12 @@ services:
       - "9224:5432"
     volumes:
       - pg_data:/var/lib/postgresql/data
+    healthcheck:
+      test:
+        ["CMD", "pg_isready", "-U", "${POSTGRES_USER}", "-d", "${POSTGRES_DB}"]
+      interval: 10s
+      retries: 5
+      start_period: 10s
+      timeout: 5s
 volumes:
   pg_data:
