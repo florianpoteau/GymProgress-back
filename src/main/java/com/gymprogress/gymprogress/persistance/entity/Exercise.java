@@ -19,7 +19,7 @@ public class Exercise {
     @Id
     @Column(name="exercise_id", unique = true, nullable = false)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int idExercise;
+    private int ExerciseId;
     
     @Basic
     @Column(name="exercise_name", unique = true, length = 50, nullable = false)
