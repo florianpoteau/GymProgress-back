@@ -1,5 +1,7 @@
 package com.gymprogress.gymprogress.persistance.entity;
 
+import java.math.BigDecimal;
+
 import jakarta.persistence.Basic;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -40,5 +42,7 @@ public class User {
     @Column(name = "user_age", length = 120, nullable = false)
     private int userAge;
 
-
+    @Basic
+    @Column(precision = 5, scale = 2,name = "user_weight", length = 300, nullable = false)
+    private BigDecimal userWeight;
 }
