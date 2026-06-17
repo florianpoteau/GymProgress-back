@@ -45,4 +45,24 @@ public class User {
     @Basic
     @Column(precision = 5, scale = 2,name = "user_weight", length = 300, nullable = false)
     private BigDecimal userWeight;
+
+    @Basic
+    @Column(name = "user_height", length = 250, nullable = false)
+    private int userHeight;
+
+    @Basic
+    @Column(name = "user_name", length = 30, nullable = false)
+    private String userName;
+
+    @Basic
+    @Column(name = "user_firstname", length = 30, nullable = false)
+    private String userFirstname;
+
+    @Basic
+    @Column(name = "user_pseudo", length = 15, nullable = false)
+    private String userPseudo;
+
+    @Basic
+    @Column(name = "user_image", length = 255, nullable = true)
+    private String userImage;
 }
