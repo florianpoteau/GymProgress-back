@@ -25,4 +25,4 @@ jobs:
         run: mvn clean verify
 
       - name: Build image docker
-        run: docker build -t gymprogress .
+        run: docker build -t gymprogress:${{ github.sha }} .
