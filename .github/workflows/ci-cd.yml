@@ -25,4 +25,13 @@ jobs:
         run: mvn clean verify
 
       - name: Build image docker
-        run: docker build -t gymprogress:${{ github.sha }} .
+        run: docker build -t gymprogress:0.0.1 .
+
+      - name: Login to docker
+        run: docker login -u ${{secrets.DOCKER_USERNAME}} -p ${{secrets.DOCKER_PASSWORD}}
+
+      - name: Tag docker
+        run: docker tag gymprogress:0.0.1 ${{secrets.DOCKER_USERNAME}}/gymprogress:0.0.1
+
+      - name: Push to docker
+        run: docker push ${{secrets.DOCKER_USERNAME}}/gymprogress:0.0.1

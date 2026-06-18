@@ -1,5 +1,8 @@
 services:
   back:
+    build:
+      context: ..
+      dockerfile: Dockerfile
     image: gymprogress:latest
     container_name: gymprogress-backend-container
     restart: always
