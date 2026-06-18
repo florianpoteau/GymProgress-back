@@ -1,9 +1,6 @@
 services:
   back:
-    build:
-      context: ..
-      dockerfile: Dockerfile
-    image: gymprogress:latest
+    image: florianpoteau/gymprogress:0.0.1
     container_name: gymprogress-backend-container
     restart: always
     environment:
