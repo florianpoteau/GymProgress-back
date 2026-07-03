@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import com.gymprogress.gymprogress.persistance.entity.ExercisesPrescription;
 
 @Repository
-public interface IExercisePrescription extends JpaRepository<ExercisesPrescription, Integer> {
+public interface IExercisePrescriptionRepository extends JpaRepository<ExercisesPrescription, Integer> {
 
 }
