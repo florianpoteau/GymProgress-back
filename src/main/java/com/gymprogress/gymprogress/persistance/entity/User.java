@@ -1,6 +1,7 @@
 package com.gymprogress.gymprogress.persistance.entity;
 
 import java.math.BigDecimal;
+import java.time.LocalDateTime;
 
 import jakarta.persistence.Basic;
 import jakarta.persistence.Column;
@@ -32,6 +33,14 @@ public class User {
     @Basic
     @Column(name = "user_password", nullable = false)
     private String userPassword;
+
+    @Basic
+    @Column(name = "reset_token")
+    private String resetToken;
+
+    @Basic
+    @Column(name = "reset_token_expiry")
+    private LocalDateTime resetTokenExpiry;
 
     @Basic
     @Enumerated(EnumType.STRING)
