@@ -20,7 +20,7 @@ public class ExercisesPrescription {
     @Id
     @Column(name = "exercise_prescription_id", nullable = false, unique = true)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int userId;
+    private int exercisePrescriptionId;
     
     @ManyToOne
     @JoinColumn(name = "exercise_id", nullable = false)
