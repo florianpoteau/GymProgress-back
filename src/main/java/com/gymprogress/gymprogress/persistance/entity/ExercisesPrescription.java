@@ -28,6 +28,6 @@ public class ExercisesPrescription {
 
     @ManyToOne
     @JoinColumn(name = "difficulty_levels_id", nullable = false)
-    private DifficultyLevels difficultyLevels;
+    private DifficultyLevels difficultyLevel;
 
 }
