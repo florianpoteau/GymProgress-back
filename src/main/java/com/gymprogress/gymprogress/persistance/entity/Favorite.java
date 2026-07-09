@@ -33,6 +33,6 @@ public class Favorite {
 
     @ManyToOne
     @JoinColumn(name = "user_id", nullable = false)
-    private int userId;
+    private User userId;
 
 }
