@@ -19,7 +19,7 @@ public class DifficultyLevels {
     @Id
     @Column(name="difficulty_level_id", unique = true, nullable = false)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int DifficultyLevelId;
+    private int difficultyLevelId;
 
     @Basic
     @Column(name = "difficulty_level_name")
